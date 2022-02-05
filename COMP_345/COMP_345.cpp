@@ -13,6 +13,7 @@ int main()
 
     showMenu();
 
+    system("pause>0");
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
