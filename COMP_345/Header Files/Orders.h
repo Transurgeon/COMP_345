@@ -9,9 +9,8 @@ using namespace std;
 class Order {
 public:
 	Order();
-
-	void move();
-	void remove();
+	
+	void execute();
 	bool validate();
 
 	~Order();
@@ -21,8 +20,11 @@ class OrdersList {
 public:
 	[] Order* OrderList;
 
-	OrdersList();
+	void move();
+	void remove();
 
+	OrdersList();
+	OrdersList(Order* []);
 	~OrdersList();
 
 };

@@ -5,7 +5,7 @@
 #include <iostream>;
 using namespace std;
 
-class Cards {
-	Cards();
+class Card {
+	Card();
 };
 #endif

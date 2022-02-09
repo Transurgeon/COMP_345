@@ -5,16 +5,22 @@
 #include <iostream>;
 #include <string>;
 #include "../Header Files/Map.h"
+#include "../Header Files/Cards.h"
+#include "../Header Files/Orders.h"
 using namespace std;
 
 class Player {
 
 public:
+	[]Territory* territories;
+	[]Card* cards;
 	Player();
 
-	void toDefend();
-	void toAttack();
-	/*Order issueOrder();*/
+	//constructor 
+	Player(Territory*[], Card*[]);
+	void toDefend(); // might do []Territory* instead of void
+	void toAttack(); 
+	Order issueOrder();
 
 	~Player();
 };
