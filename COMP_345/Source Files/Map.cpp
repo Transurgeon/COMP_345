@@ -1,6 +1,5 @@
 #include "../Header Files/Map.h"
 #include <iostream>
-#include "Map.h"
 using namespace std;
 
 Map::Map() 
@@ -53,6 +52,37 @@ Continent::~Continent()
 
 }
 
+Borders::Borders()
+{
 
+}
 
+Borders::Borders(Territory& rt, Territory& edg)
+{
 
+}
+
+Borders::~Borders()
+{
+
+}
+
+MapLoader::MapLoader()
+{
+
+}
+
+MapLoader::CreateMap()
+{
+
+}
+
+MapLoader::void readMapFile()
+{
+
+}
+
+MapLoader::~MapLoader()
+{
+
+}
