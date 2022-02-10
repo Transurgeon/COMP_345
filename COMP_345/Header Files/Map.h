@@ -18,7 +18,10 @@ private:
 public:
     
     Map();
-    Map(Territory *[], Continent *[], Borders *[]);
+    Map(vector<Territory>* ter, vector<Continent>* con, vector<Borders>* bor);
+    Map(const Map& copy);
+    Map& operator =(const Map& copy);
+
 
     bool validate();
   
