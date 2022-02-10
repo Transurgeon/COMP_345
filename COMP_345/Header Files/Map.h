@@ -37,7 +37,8 @@ private:
 public:
     Borders();
     Borders(Territory& rt, Territory& edg);
-
+    Borders(const Borders& copy);
+    Borders& operator =(const Borders& copy);
     ~Borders();
 };
 
@@ -51,6 +52,8 @@ private:
 public:
     Territory();
     Territory(string &title, int continent, int countryNum); //use constructor initialization list
+    Territory(const Territory& copy);
+    Territory& operator =(const Territory& copy);
     string getName();
     int getContinent();
     int getCountryNum();
@@ -68,7 +71,8 @@ public:
     Continent();
 
     Continent(Territory*[]);
-
+    Continent(const Continent& copy);
+    Continent& operator =(const Continent& copy);
     ~Continent();
 };
 
@@ -78,6 +82,8 @@ class MapLoader {
     MapLoader();
     Map CreateMap(); //create a map object from reading the .map file
     void readMapFile(); //might need to add input stream or remove completely
+    MapLoader(const MapLoader& copy);
+    MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
 };
 
