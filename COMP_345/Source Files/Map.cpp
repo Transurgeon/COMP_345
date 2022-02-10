@@ -72,7 +72,7 @@ MapLoader::MapLoader()
 
 }
 
-MapLoader::CreateMap()
+Map MapLoader::CreateMap()
 {
 
 }
