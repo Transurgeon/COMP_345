@@ -6,6 +6,13 @@
 using namespace std;
 
 class GameEngine {
+private:
+	int NumberOfPlayer;
+
+	GameEngine();
+	GameEngine(const GameEngine& game);
+	GameEngine& operator =(const GameEngine& copy);
+	~GameEngine();
 
 };
 
