@@ -18,64 +18,67 @@ private:
 public:
     
     Map();
-    Map(vector<Territory>* ter, vector<Continent>* con, vector<Borders>* bor);
-    Map(const Map& copy);
-    Map& operator =(const Map& copy);
-
-
+    Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b);
+    Map(const Map &copy);
+    Map& operator =(const Map &copy);
     bool validate();
-  
     ~Map();
+    friend ostream &operator<<(ostream &output, const Map &m);
 };
-
-class Borders {
-
-private:
-    Territory* root;
-    Territory* edges[];
-
-public:
-    Borders();
-    Borders(Territory& rt, Territory& edg);
-    Borders(const Borders& copy);
-    Borders& operator =(const Borders& copy);
-    ~Borders();
-};
-
 
 class Territory{
 private:
-    int continent;
-    int countryNum;
-    string title;
+    int *continent;
+    int *countryNum;
+    string *title;
 
 public:
     Territory();
-    Territory(string &title, int continent, int countryNum); //use constructor initialization list
-    Territory(const Territory& copy);
-    Territory& operator =(const Territory& copy);
-    string getName();
+    Territory(int *c, int *cn, string *t); //use constructor initialization list
+    Territory(const Territory &copy);
+    Territory &operator =(const Territory &copy);
     int getContinent();
     int getCountryNum();
+    string getName();
     ~Territory();
+    friend ostream &operator<<(ostream &output, const Territory &t);
 };
 
 
 class Continent{
 private: 
-    int continentNum;
-    int bonus;
-    string continentName;
+    int *continentNum;
+    int *bonus;
+    string *name;
 
 public:
     Continent();
-
-    Continent(Territory*[]);
+    Continent(int *c, int *b, string *n);
     Continent(const Continent& copy);
     Continent& operator =(const Continent& copy);
+    int getContinentNum();
+    int getBonus();
+    string getContinentName();
     ~Continent();
+    friend ostream& operator<<(ostream& output, const Continent& c);
 };
 
+class Borders {
+
+private:
+    int *root;
+    vector<int> *edges;
+
+public:
+    Borders();
+    Borders(int *r, vector<int> *e);
+    Borders(const Borders &copy);
+    Borders &operator =(const Borders &copy);
+    int getRoot();
+    vector<int> getEdges();
+    ~Borders();
+    friend ostream &operator<<(ostream& output, const Borders &b);
+};
 
 class MapLoader {
 
@@ -85,6 +88,7 @@ class MapLoader {
     MapLoader(const MapLoader& copy);
     MapLoader& operator =(const MapLoader& copy);
     ~MapLoader();
+    friend ostream& operator<<(ostream& output, const MapLoader& ml);
 };
 
 #endif
