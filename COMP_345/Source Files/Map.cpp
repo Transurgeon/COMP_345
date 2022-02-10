@@ -7,7 +7,7 @@ Map::Map()
 
 }
 
-Map::bool validate() 
+bool Map:: validate()
 {
 
 }
@@ -77,7 +77,7 @@ MapLoader::CreateMap()
 
 }
 
-MapLoader::void readMapFile()
+void MapLoader:: readMapFile()
 {
 
 }
