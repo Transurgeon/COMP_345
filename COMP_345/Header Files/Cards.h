@@ -19,7 +19,7 @@ public:
 	void play();
 	
 	~Card();
-	friend ostream& operator<<(ostream& output, const Card& c);
+	friend ostream& operator<<(ostream& output, Card& c);
 };
 
 class Deck
@@ -35,7 +35,7 @@ public:
 	void draw();
 
 	~Deck();
-	friend ostream& operator<<(ostream& output, const Deck& d);
+	friend ostream& operator<<(ostream& output, Deck& d);
 };
 
 class Hand
@@ -49,7 +49,7 @@ public:
 	Hand& operator =(const Hand& copy);
 
 	~Hand();
-	friend ostream& operator<<(ostream& output, const Hand& h);
+	friend ostream& operator<<(ostream& output, Hand& h);
 };
 
 #endif

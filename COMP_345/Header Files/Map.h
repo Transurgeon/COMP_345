@@ -45,7 +45,7 @@ public:
     int getPlayer();
     ~Territory();
 
-    friend ostream &operator<<(ostream &output, const Territory &t);
+    friend ostream &operator<<(ostream &output, Territory &t);
 };
 
 

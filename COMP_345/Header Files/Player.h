@@ -29,6 +29,6 @@ public:
 
 	~Player();
 
-	friend ostream& operator<<(ostream& output, const Player& p);
+	friend ostream& operator<<(ostream& output, Player& p);
 };
 #endif

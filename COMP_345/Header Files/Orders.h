@@ -18,7 +18,7 @@ public:
 	bool validate();
 
 	~Order();
-	friend ostream& operator<<(ostream& output, const Order& o);
+	friend ostream& operator<<(ostream& output, Order& o);
 };
 
 class OrdersList {
@@ -34,6 +34,6 @@ public:
 	void remove();
 
 	~OrdersList();
-	friend ostream& operator<<(ostream& output, const OrdersList& ol);
+	friend ostream& operator<<(ostream& output, OrdersList& ol);
 };
 #endif
