@@ -1,5 +1,6 @@
 #include "../Header Files/Map.h"
-#include <iostream>
+#include <iostream>;
+#include <vector>;
 using namespace std;
 
 /// <summary>
@@ -10,7 +11,7 @@ Map::Map()
 
 }
 
-bool Map:: validate()
+bool Map::validate()
 {
 
 }
