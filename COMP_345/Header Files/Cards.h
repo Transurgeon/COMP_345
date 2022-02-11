@@ -3,36 +3,53 @@
 #define COMP_345_Cards_h
 
 #include <iostream>;
+#include <string>;
+#include <vector>;
 using namespace std;
 
 class Card {
 private:
-	vector<string> Card_types = { "bomb", "reinforcement", "blockade", "airlift", "displomacy" };
+	vector<string> Card_types{ "bomb", "reinforcement", "blockade", "airlift", "displomacy" };
 	string* type;
 public: 
 	Card();
-	~Card();
+	Card(const Card& copy);
+	Card& operator =(const Card& copy);
+	
 	void play();
 	
+	~Card();
+	friend ostream& operator<<(ostream& output, const Card& c);
 };
 
 class Deck
 {
+private:
+	vector<Card> *deck;
+
 public:
 	Deck();
-	~Deck();
+	Deck(const Deck& copy);
+	Deck& operator =(const Deck& copy);
 
 	void draw();
 
+	~Deck();
+	friend ostream& operator<<(ostream& output, const Deck& d);
 };
 
 class Hand
 {
-public:
-	[] Card* warzoneCards;
-	Hand();
-	~Hand();
+private:
+	vector<Card>* hand;
 
+public:
+	Hand();
+	Hand(const Hand& copy);
+	Hand& operator =(const Hand& copy);
+
+	~Hand();
+	friend ostream& operator<<(ostream& output, const Hand& h);
 };
 
 #endif

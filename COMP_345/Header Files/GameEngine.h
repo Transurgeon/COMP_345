@@ -5,23 +5,16 @@
 #include <iostream>;
 using namespace std;
 
-void run_game();
+void runGame();
 
-class GameEngine {
-private:
-	int NumberOfPlayer;
-	string MapPath;
+namespace GameEngine {
 
-
-	GameEngine();
-	void gameStart(); 
-	// void assignReinforcements()
-	// void issueOrders()
-	// void executeOrders() 
-	GameEngine(const GameEngine& game);
-	GameEngine& operator =(const GameEngine& copy);
-	~GameEngine();
-
+	void loadMap();
+	void addPlayers();
+	void assignReinforcements();
+	void issueOrders();
+	bool executeOrders();
+	bool gameOver();
 };
 
 #endif

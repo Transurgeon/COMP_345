@@ -4,28 +4,36 @@
 
 #include <iostream>;
 #include <string>;
+#include <vector>;
 using namespace std;
 
 class Order {
+
 public:
 	Order();
+	Order(const Order& copy);
+	Order& operator =(const Order& copy);
 	
 	void execute();
 	bool validate();
 
 	~Order();
+	friend ostream& operator<<(ostream& output, const Order& o);
 };
 
 class OrdersList {
+private:
+	vector<Order>* OrderList;
+
 public:
-	[] Order* OrderList;
+	OrdersList();
+	OrdersList(const OrdersList& copy);
+	OrdersList& operator =(const OrdersList& copy);
 
 	void move();
 	void remove();
 
-	OrdersList();
-	OrdersList(Order* []);
 	~OrdersList();
-
+	friend ostream& operator<<(ostream& output, const OrdersList& ol);
 };
 #endif
