@@ -17,7 +17,8 @@ public:
 	Card& operator =(const Card& copy);
 	
 	void play();
-	
+	string* getCardType();
+
 	~Card();
 	friend ostream& operator<<(ostream& output, Card& c);
 };
@@ -33,6 +34,7 @@ public:
 	Deck& operator =(const Deck& copy);
 
 	void draw();
+	vector<Card> *getDeck();
 
 	~Deck();
 	friend ostream& operator<<(ostream& output, Deck& d);
@@ -47,6 +49,7 @@ public:
 	Hand();
 	Hand(const Hand& copy);
 	Hand& operator =(const Hand& copy);
+	vector<Card>* getHand();
 
 	~Hand();
 	friend ostream& operator<<(ostream& output, Hand& h);
