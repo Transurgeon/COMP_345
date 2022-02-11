@@ -39,7 +39,7 @@ public:
     Territory(const Territory &copy);
     Territory &operator =(const Territory &copy);
     void setPlayer(int *p);
-    int getContinent();
+    int getContinentNum();
     int getCountryNum();
     string getName();
     int getPlayer();

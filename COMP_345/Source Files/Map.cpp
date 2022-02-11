@@ -130,7 +130,7 @@ Territory::~Territory()
 ostream& operator<<(ostream& output, Territory& t) 
 {
 	output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum()<< endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	output << " This territory is part of the continent number: " << t.getContinentNum() << " it is owned by" << t.getName() << endl;
 	return output;
 }
 /// <summary>
@@ -138,23 +138,31 @@ ostream& operator<<(ostream& output, Territory& t)
 /// </summary>
 Continent::Continent()
 {
-
+	continentNum = new int(-1);
+	bonus = new int(-1);
+	continentName = new string("");
 }
 
 Continent::Continent(int* c, int* b, string* n)
 {
-
+	continentNum = c;
+	bonus = b;
+	continentName = n;
 }
 
-Continent::Continent(const Continent& copy) {
-	*continentNum = *copy.continentNum;
-	*bonus = *copy.bonus;
-	*continentName = *copy.continentName;
+Continent::Continent(const Continent& copy)
+{
+	continentNum = new int(copy.continentNum);
+	bonus = new int(copy.bonus);
+	continentName = new string(copy.continentName);
 }
 
 Continent& Continent::operator =(const Continent& copy)
 {
-
+	continentNum = new int(copy.continentNum);
+	bonus = new int(copy.bonus);
+	continentName = new string(copy.continentName);
+	return *this;
 }
 
 int Continent::getContinentNum()
@@ -181,30 +189,38 @@ ostream& operator<<(ostream& output, Continent& c)
 
 Continent::~Continent()
 {
-
+	delete continentNum;
+	delete bonus;
+	delete continentName;
+	continentNum = NULL;
+	bonus = NULL;
+	continentName = NULL;
 }
 /// <summary>
 /// Borders
 /// </summary>
 Borders::Borders()
 {
-
+	root = new int(-1);
 }
 
 Borders::Borders(int* r, vector<int>* e)
 {
-
+	root = r;
+	edges = e;
 }
 
 Borders::Borders(const Borders& copy)
 {
-	*root = *copy.root;
-	*edges = *copy.edges;
+	root = new int(copy.root);
+	edges = copy.edges;
 }
 
 Borders& Borders::operator =(const Borders& copy)
 {
-
+	root = new int(copy.root);
+	edges = copy.edges;
+	return *this;
 }
 
 int Borders::getRoot()
@@ -219,15 +235,18 @@ vector<int> Borders::getEdges()
 
 ostream& operator<<(ostream& output, Borders& b)
 {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
+	output << "The border connects from " << b.getRoot() << "to" << b.getEdges() << endl;
+	return output;
 }
 
 Borders::~Borders()
 {
-
+	delete root;
+	delete edges;
+	root = NULL;
+	edges = NULL;
 }
+
 /// <summary>
 /// MapLoader
 /// </summary>
