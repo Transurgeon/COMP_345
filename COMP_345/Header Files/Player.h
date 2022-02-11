@@ -11,13 +11,11 @@ using namespace std;
 
 class Player {
 
-public:
-	[]Territory* territories;
-	[]Card* cards;
-	Player();
-	
-	//constructor 
-	Player(Territory*[], Card*[]);
+private:
+	vector<int>* territoryNum;
+	vector<int>* cards;//vector<Cards>* cards;
+	Player(); 
+	Player(vector<int>* t, vector<int>* cards);
 	void toDefend(); // might do []Territory* instead of void
 	void toAttack(); 
 	Order issueOrder();

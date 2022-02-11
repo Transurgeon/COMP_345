@@ -31,16 +31,20 @@ private:
     int *continent;
     int *countryNum;
     string *title;
+    int* playerNum;
 
 public:
     Territory();
     Territory(int *c, int *cn, string *t); //use constructor initialization list
     Territory(const Territory &copy);
     Territory &operator =(const Territory &copy);
+    void setPlayer(int *p);
     int getContinent();
     int getCountryNum();
     string getName();
+    int getPlayer();
     ~Territory();
+
     friend ostream &operator<<(ostream &output, const Territory &t);
 };
 

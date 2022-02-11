@@ -5,6 +5,8 @@
 #include <iostream>;
 using namespace std;
 
+void run_game();
+
 class GameEngine {
 private:
 	int NumberOfPlayer;
