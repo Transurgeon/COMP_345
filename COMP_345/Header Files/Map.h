@@ -85,7 +85,7 @@ public:
 };
 
 class MapLoader {
-
+    //should add string = path file, maybe use user input instead
     MapLoader();
     Map CreateMap(); //create a map object from reading the .map file
     void readMapFile(); //might need to add input stream or remove completely

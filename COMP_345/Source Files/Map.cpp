@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+/// <summary>
+/// Map
+/// </summary>
 Map::Map() 
 {
 
@@ -24,7 +27,7 @@ Map::Map(const Map& copy)
 
 Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
 {
-
+	
 }
 
 ostream& operator<<(ostream& output, const Map& m)
@@ -36,7 +39,9 @@ Map::~Map()
 {
 
 }
-
+/// <summary>
+/// Territory
+/// </summary>
 Territory::Territory() 
 {
 
@@ -49,7 +54,10 @@ Territory::Territory(int* c, int* cn, string* t)
 
 Territory::Territory(const Territory& copy)
 {
-
+	*continent = *copy.continent;
+	*countryNum = *copy.countryNum;
+	*title = *copy.title;
+	*playerNum = *copy.playerNum;
 }
 
 Territory& Territory::operator =(const Territory& copy)
@@ -91,7 +99,9 @@ ostream& operator<<(ostream& output, const Territory& t)
 {
 
 }
-
+/// <summary>
+/// Continent
+/// </summary>
 Continent::Continent()
 {
 
@@ -100,6 +110,12 @@ Continent::Continent()
 Continent::Continent(int* c, int* b, string* n)
 {
 
+}
+
+Continent::Continent(const Continent& copy) {
+	*continentNum = *copy.continentNum;
+	*bonus = *copy.bonus;
+	*continentName = *copy.continentName;
 }
 
 Continent& Continent::operator =(const Continent& copy)
@@ -131,7 +147,9 @@ Continent::~Continent()
 {
 
 }
-
+/// <summary>
+/// Borders
+/// </summary>
 Borders::Borders()
 {
 
@@ -171,7 +189,9 @@ Borders::~Borders()
 {
 
 }
-
+/// <summary>
+/// MapLoader
+/// </summary>
 MapLoader::MapLoader()
 {
 
