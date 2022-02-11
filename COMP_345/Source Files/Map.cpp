@@ -8,22 +8,29 @@ using namespace std;
 /// </summary>
 Map::Map() 
 {
-
+	
 }
 
 Map::Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b) 
 {
-
+	territories = t;
+	continents = c;
+	borders = b;
 }
 
 Map::Map(const Map& copy)
 {
-
+	territories = copy.territories;
+	continents = copy.continents;
+	borders = copy.borders;
 }
 
 Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
 {
-	
+	territories = copy.territories;
+	continents = copy.continents;
+	borders = copy.borders;
+	return *this;
 }
 
 bool Map::validate()
@@ -33,49 +40,64 @@ bool Map::validate()
 
 ostream& operator<<(ostream& output, const Map& m)
 {
-
+	output << "Number of territories: "<< *m.territories.size() << ", number of continents: " << *m.continents.size() << ", number of borders: " << *m.borders.size() << endl;
+	return output;
 }
 
 Map::~Map()
 {
-
+	delete territories;
+	delete continents;
+	delete borders;
+	territories = NULL;
+	continents = NULL;
+	borders = NULL;
 }
+
 /// <summary>
 /// Territory
 /// </summary>
 Territory::Territory() 
 {
-
+	continentNum = new int(-1);
+	countryNum = new int(-1);
+	title = new string("");
+	playerNum = new int(-1);
 }
 
-Territory::Territory(int* c, int* cn, string* t) 
+Territory::Territory(int* con, int* cou, string* t) 
 {
-	*this->continent = *c;
-	*this->countryNum = *cn;
-	*this->title = *t;
+	continentNum = con;
+	countryNum = cou;
+	title = t;
+	playerNum = new int(-1);
 }
 
 Territory::Territory(const Territory& copy)
 {
-	*continent = *copy.continent;
-	*countryNum = *copy.countryNum;
-	*title = *copy.title;
-	*playerNum = *copy.playerNum;
+	continentNum = new int(copy.continentNum);
+	countryNum = new int(copy.countryNum);
+	title = new string(copy.title);
+	playerNum = new int(copy.playerNum);
 }
 
 Territory& Territory::operator =(const Territory& copy)
 {
+	continentNum = new int(copy.continentNum);
+	countryNum = new int(copy.countryNum);
+	title = new string(copy.title);
+	playerNum = new int(copy.playerNum);
 	return *this;
 }
 
 void Territory::setPlayer(int* p)
 {
-	*playerNum = *p;
+	playerNum = p;
 }
 
-int Territory::getContinent()
+int Territory::getContinentNum()
 {
-	return *continent;
+	return *continentNum;
 }
 
 int Territory::getCountryNum()
@@ -95,7 +117,14 @@ int Territory::getPlayer()
 
 Territory::~Territory()
 {
-
+	delete continentNum;
+	delete countryNum;
+	delete title;
+	delete playerNum;
+	continentNum = NULL;
+	countryNum = NULL;
+	title = NULL;
+	playerNum =	NULL;
 }
 
 ostream& operator<<(ostream& output, Territory& t) 

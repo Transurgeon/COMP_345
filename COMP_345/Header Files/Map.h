@@ -28,14 +28,14 @@ public:
 
 class Territory{
 private:
-    int *continent;
+    int *continentNum;
     int *countryNum;
     string *title;
     int* playerNum;
 
 public:
     Territory();
-    Territory(int *c, int *cn, string *t); //use constructor initialization list
+    Territory(int *con, int *cou, string *t); //use constructor initialization list
     Territory(const Territory &copy);
     Territory &operator =(const Territory &copy);
     void setPlayer(int *p);
