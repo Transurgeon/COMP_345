@@ -8,8 +8,14 @@ using namespace std;
 class GameEngine {
 private:
 	int NumberOfPlayer;
+	string MapPath;
+
 
 	GameEngine();
+	void gameStart(); 
+	// void assignReinforcements()
+	// void issueOrders()
+	// void executeOrders() 
 	GameEngine(const GameEngine& game);
 	GameEngine& operator =(const GameEngine& copy);
 	~GameEngine();

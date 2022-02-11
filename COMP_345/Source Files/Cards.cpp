@@ -1,5 +1,5 @@
 #include "../Header Files/Cards.h"
 
-Cards::Cards() {
+Card::Card() {
 
 }

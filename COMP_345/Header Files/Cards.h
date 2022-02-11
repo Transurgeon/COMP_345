@@ -6,13 +6,14 @@
 using namespace std;
 
 class Card {
+private:
+	vector<string> Card_types = { "bomb", "reinforcement", "blockade", "airlift", "displomacy" };
+	string* type;
+public: 
 	Card();
+	~Card();
 	void play();
-	Card* bomb;
-	Card* reinforcement;
-	Card* blockade;
-	Card* airlift;
-	Card* diplomacy;
+	
 };
 
 class Deck
@@ -28,10 +29,9 @@ public:
 class Hand
 {
 public:
+	[] Card* warzoneCards;
 	Hand();
 	~Hand();
-
-	[] Card* warzoneCards;
 
 };
 

@@ -15,7 +15,7 @@ public:
 	[]Territory* territories;
 	[]Card* cards;
 	Player();
-
+	
 	//constructor 
 	Player(Territory*[], Card*[]);
 	void toDefend(); // might do []Territory* instead of void
