@@ -53,7 +53,7 @@ class Continent{
 private: 
     int *continentNum;
     int *bonus;
-    string *name;
+    string *continentName;
 
 public:
     Continent();
