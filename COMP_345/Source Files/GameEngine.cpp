@@ -1,11 +1,9 @@
 #include "../Header Files/GameEngine.h"
 
-
-namespace GameEngine {
-
-	void runGame() {
+void runGame() {
 
 	}
+namespace GameEngine {
 
 	void loadMap() {
 

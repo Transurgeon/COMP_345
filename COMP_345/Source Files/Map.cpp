@@ -48,9 +48,11 @@ Territory::Territory()
 
 }
 
-Territory::Territory(int* c, int* cn, string* t)
+Territory::Territory(int* c, int* cn, string* t) 
 {
-
+	*this->continent = *c;
+	*this->countryNum = *cn;
+	*this->title = *t;
 }
 
 Territory::Territory(const Territory& copy)
@@ -96,9 +98,11 @@ Territory::~Territory()
 
 }
 
-ostream& operator<<(ostream& output, const Territory& t)
+ostream& operator<<(ostream& output, Territory& t)
 {
-
+	output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum()<< endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;
 }
 /// <summary>
 /// Continent
