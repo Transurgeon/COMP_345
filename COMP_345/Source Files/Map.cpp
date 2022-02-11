@@ -1,6 +1,6 @@
 #include "../Header Files/Map.h"
 #include <iostream>;
-#include <vector>;
+
 using namespace std;
 
 /// <summary>
@@ -11,14 +11,8 @@ Map::Map()
 
 }
 
-bool Map::validate()
+Map::Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b) 
 {
-
-}
-
-Map::Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b)
-{
-	
 
 }
 
@@ -30,6 +24,11 @@ Map::Map(const Map& copy)
 Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
 {
 	
+}
+
+bool Map::validate()
+{
+	return true;
 }
 
 ostream& operator<<(ostream& output, const Map& m)
@@ -66,12 +65,12 @@ Territory::Territory(const Territory& copy)
 
 Territory& Territory::operator =(const Territory& copy)
 {
-
+	return *this;
 }
 
 void Territory::setPlayer(int* p)
 {
-
+	*playerNum = *p;
 }
 
 int Territory::getContinent()
@@ -144,9 +143,11 @@ string Continent::getContinentName()
 	return *continentName;
 }
 
-ostream& operator<<(ostream& output, const Continent& c)
+ostream& operator<<(ostream& output, Continent& c)
 {
-
+	output << " This continent is called : " << c.getContinentName() << " and is the continent number :" << c.getContinentNum() << endl;
+	output << " Holding this continent gives a bonus of : " << c.getBonus() << " troups per round" << endl;
+	return output;
 }
 
 Continent::~Continent()
@@ -168,7 +169,8 @@ Borders::Borders(int* r, vector<int>* e)
 
 Borders::Borders(const Borders& copy)
 {
-
+	*root = *copy.root;
+	*edges = *copy.edges;
 }
 
 Borders& Borders::operator =(const Borders& copy)
@@ -186,9 +188,11 @@ vector<int> Borders::getEdges()
 	return *edges;
 }
 
-ostream& operator<<(ostream& output, const Borders& b)
+ostream& operator<<(ostream& output, Borders& b)
 {
-
+	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;*/
 }
 
 Borders::~Borders()
@@ -228,7 +232,9 @@ MapLoader::~MapLoader()
 
 }
 
-ostream& operator<<(ostream& output, const MapLoader& ml)
+ostream& operator<<(ostream& output, MapLoader& ml)
 {
-
+	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;*/
 }
