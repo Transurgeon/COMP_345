@@ -1,6 +1,33 @@
 #include "../Header Files/GameEngine.h"
 
-GameEngine::GameEngine() {
 
+namespace GameEngine {
 
+	void runGame() {
+
+	}
+
+	void loadMap() {
+
+	}
+
+	void addPlayers() {
+
+	}
+
+	void assignReinforcements() {
+
+	}
+
+	void issueOrders() {
+
+	}
+
+	bool executeOrders() {
+
+	}
+
+	bool gameOver() {
+
+	}
 }

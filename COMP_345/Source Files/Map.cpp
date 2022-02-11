@@ -22,7 +22,7 @@ Map::Map(const Map& copy)
 
 }
 
-Map& operator =(const Map& copy)
+Map& Map::operator =(const Map& copy) //added Map::operator and put the Map reference in front to create a deep copy
 {
 
 }
@@ -52,7 +52,7 @@ Territory::Territory(const Territory& copy)
 
 }
 
-Territory& operator =(const Territory& copy)
+Territory& Territory::operator =(const Territory& copy)
 {
 
 }
@@ -64,22 +64,22 @@ void Territory::setPlayer(int* p)
 
 int Territory::getContinent()
 {
-	return continent;
+	return *continent;
 }
 
 int Territory::getCountryNum()
 {
-	return countryNum;
+	return *countryNum;
 }
 
 string Territory::getName()
 {
-	return name;
+	return *title;
 }
 
 int Territory::getPlayer()
 {
-	return playerNum;
+	return *playerNum;
 }
 
 Territory::~Territory()
@@ -102,24 +102,24 @@ Continent::Continent(int* c, int* b, string* n)
 
 }
 
-Continent& operator =(const Continent& copy)
+Continent& Continent::operator =(const Continent& copy)
 {
 
 }
 
-Continent::getContinentNum()
+int Continent::getContinentNum()
 {
-	return continentNuml
+	return *continentNum;
 }
 
-Continent::getBonus()
+int Continent::getBonus()
 {
-	return bonus;
+	return *bonus;
 }
 
 string Continent::getContinentName()
 {
-	return continentName;
+	return *continentName;
 }
 
 ostream& operator<<(ostream& output, const Continent& c)
@@ -147,22 +147,22 @@ Borders::Borders(const Borders& copy)
 
 }
 
-Borders& operator =(const Borders& copy)
+Borders& Borders::operator =(const Borders& copy)
 {
 
 }
 
 int Borders::getRoot()
 {
-	return root;
+	return *root;
 }
 
 vector<int> Borders::getEdges()
 {
-	return edges;
+	return *edges;
 }
 
-friend ostream& operator<<(ostream& output, const Borders& b)
+ostream& operator<<(ostream& output, const Borders& b)
 {
 
 }
@@ -192,7 +192,7 @@ MapLoader::MapLoader(const MapLoader& copy)
 
 }
 
-MapLoader& operator =(const MapLoader& copy)
+MapLoader& MapLoader::operator =(const MapLoader& copy)
 {
 
 }
@@ -202,7 +202,7 @@ MapLoader::~MapLoader()
 
 }
 
-friend ostream& operator<<(ostream& output, const MapLoader& ml)
+ostream& operator<<(ostream& output, const MapLoader& ml)
 {
 
 }

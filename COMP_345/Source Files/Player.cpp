@@ -1,32 +1,37 @@
 #include "../Header Files/Player.h"
 
-Player::Player() 
-{
-
-	
-}
-
-Player::Player(Territory* [], Card* [])
-{
+Player::Player() {
 
 }
 
-void Player::toDefend()
-{
+Player::Player(const Player& copy) {
 
 }
 
-void Player::toAttack()
-{
+Player& Player::operator =(const Player& copy) {
 
 }
 
-Order Player::issueOrder()
-{
+void Player::assignTerritories() {
 
 }
 
-Player::~Player()
-{
+void Player::toDefend() {
+
+}
+
+void Player::toAttack() {
+
+}
+
+Order Player::issueOrder() {
+
+}
+
+Player::~Player() {
+
+}
+
+ostream& operator<<(ostream& output, const Player& p) {
 
 }

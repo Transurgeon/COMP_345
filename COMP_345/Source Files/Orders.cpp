@@ -1,46 +1,57 @@
 #include "../Header Files/Orders.h"
 
-Order::Order() 
-{
+Order::Order() {
 
 }
 
-void Order::execute()
-{
+Order::Order(const Order& copy) {
 
 }
 
-bool Order::validate()
-{
+Order& Order::operator =(const Order& copy) {
 
 }
 
-Order::~Order()
-{
+void Order::execute() {
 
 }
 
-OrdersList::OrdersList()
-{
+bool Order::validate() {
 
 }
 
-OrdersList::OrdersList(Order* [])
-{
+Order::~Order() {
 
 }
 
-OrdersList::~OrdersList()
-{
+ostream& operator<<(ostream& output, const Order& o) {
 
 }
 
-void OrdersList::move()
-{
+OrdersList::OrdersList() {
 
 }
 
-void OrdersList::remove()
-{
+OrdersList::OrdersList(const OrdersList& copy) {
+
+}
+
+OrdersList& OrdersList::operator =(const OrdersList& copy) {
+
+}
+
+void OrdersList::move() {
+
+}
+
+void OrdersList::remove() {
+
+}
+
+OrdersList::~OrdersList() {
+
+}
+
+ostream& operator<<(ostream& output, const OrdersList& ol) {
 
 }
