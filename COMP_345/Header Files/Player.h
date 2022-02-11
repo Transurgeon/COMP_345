@@ -6,15 +6,15 @@
 #include <string>;
 #include <vector>;
 #include "../Header Files/Map.h"
-/*#include "../Header Files/Cards.h"*/
+#include "../Header Files/Cards.h"
 #include "../Header Files/Orders.h"
 using namespace std;
 
 class Player {
 
 private:
-	vector<int>* territoriesNum;
-	vector<int>* playerCards; //vector<Cards>* cards;
+	vector<Territory>* territoriesNum;
+	vector<Card>* playerCards; //vector<Cards>* cards;
 	OrdersList* playerOrders;
 
 public:
@@ -25,6 +25,9 @@ public:
 	void assignTerritories();
 	void toDefend(); // might do []Territory* instead of void
 	void toAttack(); 
+	vector<Territory>* getTerritoriesNum();
+	vector<Card>* getPlayerCards();
+	OrdersList* getPlayerOrders();
 	Order issueOrder();
 
 	~Player();

@@ -17,6 +17,19 @@ void Player::assignTerritories() {
 }
 
 void Player::toDefend() {
+	
+	vector<Territory>* territories = getTerritoriesNum();
+
+	 for (int i = 0; i < territories.size(); i++)
+	{
+		 bool defended = false;
+		 for (auto &territory: territories)
+		 {
+
+		 }
+		 
+
+	};
 	/*
 	* 
 	array[] = needDefend;
@@ -33,6 +46,18 @@ void Player::toDefend() {
 }
 
 void Player::toAttack() {
+	vector<Territory>* territories = getTerritoriesNum();
+
+	for (int i = 0; i < territories.size(); i++)
+	{
+		bool defended = false;
+		for (auto& territory : territories)
+		{
+
+		}
+
+
+	};
 	/*
 	*
 	array[] = toAttack;
@@ -45,6 +70,18 @@ void Player::toAttack() {
 	}
 
 	*/
+}
+vector<Territory>* Player::getTerritoriesNum() {
+	return territoriesNum;
+}
+vector<Card>* Player::getPlayerCards() {
+	return playerCards;
+}
+OrdersList* Player::getPlayerOrders() {
+	return playerOrders;
+}
+void Player::assignTerritories(){
+	
 }
 
 Order Player::issueOrder() {
