@@ -1,6 +1,5 @@
 #include "../Header Files/Map.h"
 #include <iostream>;
-
 using namespace std;
 
 /// <summary>
@@ -38,9 +37,9 @@ bool Map::validate()
 	return true;
 }
 
-ostream& operator<<(ostream& output, const Map& m)
+ostream& operator<<(ostream& output, Map& m)
 {
-	output << "Number of territories: "<< *m.territories.size() << ", number of continents: " << *m.continents.size() << ", number of borders: " << *m.borders.size() << endl;
+	output << "Number of territories: "<< m.territories << ", number of continents: " << m.continents << ", number of borders: " << m.borders << endl;
 	return output;
 }
 
@@ -75,18 +74,18 @@ Territory::Territory(int* con, int* cou, string* t)
 
 Territory::Territory(const Territory& copy)
 {
-	continentNum = new int(copy.continentNum);
-	countryNum = new int(copy.countryNum);
-	title = new string(copy.title);
-	playerNum = new int(copy.playerNum);
+	continentNum = new int(*copy.continentNum);
+	countryNum = new int(*copy.countryNum);
+	title = new string(*copy.title);
+	playerNum = new int(*copy.playerNum);
 }
 
 Territory& Territory::operator =(const Territory& copy)
 {
-	continentNum = new int(copy.continentNum);
-	countryNum = new int(copy.countryNum);
-	title = new string(copy.title);
-	playerNum = new int(copy.playerNum);
+	continentNum = new int(*copy.continentNum);
+	countryNum = new int(*copy.countryNum);
+	title = new string(*copy.title);
+	playerNum = new int(*copy.playerNum);
 	return *this;
 }
 
@@ -152,16 +151,16 @@ Continent::Continent(int* c, int* b, string* n)
 
 Continent::Continent(const Continent& copy)
 {
-	continentNum = new int(copy.continentNum);
-	bonus = new int(copy.bonus);
-	continentName = new string(copy.continentName);
+	continentNum = new int(*copy.continentNum);
+	bonus = new int(*copy.bonus);
+	continentName = new string(*copy.continentName);
 }
 
 Continent& Continent::operator =(const Continent& copy)
 {
-	continentNum = new int(copy.continentNum);
-	bonus = new int(copy.bonus);
-	continentName = new string(copy.continentName);
+	continentNum = new int(*copy.continentNum);
+	bonus = new int(*copy.bonus);
+	continentName = new string(*copy.continentName);
 	return *this;
 }
 
@@ -212,13 +211,13 @@ Borders::Borders(int* r, vector<int>* e)
 
 Borders::Borders(const Borders& copy)
 {
-	root = new int(copy.root);
+	root = new int(*copy.root);
 	edges = copy.edges;
 }
 
 Borders& Borders::operator =(const Borders& copy)
 {
-	root = new int(copy.root);
+	root = new int(*copy.root);
 	edges = copy.edges;
 	return *this;
 }
@@ -235,7 +234,7 @@ vector<int> Borders::getEdges()
 
 ostream& operator<<(ostream& output, Borders& b)
 {
-	output << "The border connects from " << b.getRoot() << "to" << b.getEdges() << endl;
+	output << "The border connects from " << b.getRoot() << "to" << b.getEdges().size() << endl;
 	return output;
 }
 

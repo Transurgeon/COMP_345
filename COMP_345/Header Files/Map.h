@@ -16,12 +16,13 @@ private:
     vector<Borders> *borders;
 
 public:
-    
+
     Map();
     Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b);
     Map(const Map &copy);
     Map& operator =(const Map &copy);
     bool validate();
+
     ~Map();
     friend ostream &operator<<(ostream &output, const Map &m);
 };
