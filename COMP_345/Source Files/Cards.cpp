@@ -23,8 +23,8 @@ string* Card::getCardType()
 }
 
 Card::~Card() {
-	delete Card;
-	Card = null;
+	delete type;
+	type = NULL;
 }
 
 ostream& operator<<(ostream& output, const Card& c) {
@@ -58,7 +58,7 @@ vector<Card>* Deck::getDeck()
 
 Deck::~Deck() {
 	delete deck;
-	deck = null;
+	deck = NULL;
 }
 
 ostream& operator<<(ostream& output, const Deck& d) {
@@ -86,8 +86,8 @@ vector<Card>* Hand::getHand()
 }
 
 Hand::~Hand() {
-	delete hand;
-	hand = null;
+	delete Hand;
+	Hand = NULL;
 }
 
 ostream& operator<<(ostream& output, const Hand& h) {
