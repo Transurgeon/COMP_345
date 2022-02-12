@@ -4,12 +4,21 @@ Order::Order() {
 
 }
 
-Order::Order(const Order& copy) {
+Order::Order(string* t) {
+	type = t;
+}
 
+Order::Order(const Order& copy) {
+	type = new string(*copy.type);
 }
 
 Order& Order::operator =(const Order& copy) {
+	type = new string(*copy.type);
+		return *this;
+}
 
+string* Order::getType() {
+	return type;
 }
 
 void Order::execute() {
@@ -21,23 +30,35 @@ bool Order::validate() {
 }
 
 Order::~Order() {
-
+	delete type;
+	type = NULL;
 }
 
 ostream& operator<<(ostream& output, const Order& o) {
-
+	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;*/
 }
 
 OrdersList::OrdersList() {
 
 }
 
-OrdersList::OrdersList(const OrdersList& copy) {
+OrdersList::OrdersList(Order* o) {
+	OrderList->push_back(o);
+}
 
+OrdersList::OrdersList(const OrdersList& copy) {
+	OrderList = copy.OrderList;
 }
 
 OrdersList& OrdersList::operator =(const OrdersList& copy) {
+	OrderList = copy.OrderList;
+	return *this;
+}
 
+vector<Order>* OrdersList::getOrderList() {
+	return OrderList;
 }
 
 void OrdersList::move() {
@@ -49,9 +70,12 @@ void OrdersList::remove() {
 }
 
 OrdersList::~OrdersList() {
-
+	delete OrderList;
+	OrderList = NULL;
 }
 
 ostream& operator<<(ostream& output, const OrdersList& ol) {
-
+	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;*/
 }

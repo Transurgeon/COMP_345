@@ -14,11 +14,12 @@ class Player {
 
 private:
 	vector<Territory>* territoriesNum;
-	vector<Card>* playerCards; //vector<Cards>* cards;
+	Hand* playerCards; //changed vector<Cards>* to Hand*
 	OrdersList* playerOrders;
 
 public:
 	Player();
+	Player(vector<Territory>* t, Hand* h, OrdersList* o);
 	Player(const Player& copy);
 	Player& operator =(const Player& copy);
 
@@ -26,7 +27,7 @@ public:
 	void toDefend(); // might do []Territory* instead of void
 	void toAttack(); 
 	vector<Territory>* getTerritoriesNum();
-	vector<Card>* getPlayerCards();
+	Hand* getPlayerCards();
 	OrdersList* getPlayerOrders();
 	Order issueOrder();
 

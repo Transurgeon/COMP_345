@@ -4,12 +4,23 @@ Player::Player() {
 
 }
 
-Player::Player(const Player& copy) {
+Player::Player(vector<Territory>* t, Hand* h, OrdersList* o) {
+	territoriesNum = t;
+	playerCards = h;
+	playerOrders = o;
+}
 
+Player::Player(const Player& copy) {
+	territoriesNum = copy.territoriesNum;
+	playerCards = new Hand(*copy.playerCards);
+	playerOrders = new OrdersList(*copy.playerOrders);
 }
 
 Player& Player::operator =(const Player& copy) {
-
+	territoriesNum = copy.territoriesNum;
+	playerCards = new Hand(*copy.playerCards);
+	playerOrders = new OrdersList(*copy.playerOrders);
+	return *this;
 }
 
 void Player::assignTerritories() {
@@ -17,17 +28,12 @@ void Player::assignTerritories() {
 }
 
 void Player::toDefend() {
-	
 	vector<Territory>* territories = getTerritoriesNum();
 
-	 for (int i = 0; i < territories.size(); i++)
+	for (int i = 0; i < territories->size(); i++)
 	{
-		 bool defended = false;
-		 for (auto &territory: territories)
-		 {
+		bool defended = false;
 
-		 }
-		 
 
 	};
 	/*
@@ -48,14 +54,10 @@ void Player::toDefend() {
 void Player::toAttack() {
 	vector<Territory>* territories = getTerritoriesNum();
 
-	for (int i = 0; i < territories.size(); i++)
+	for (int i = 0; i < territories->size(); i++)
 	{
 		bool defended = false;
-		for (auto& territory : territories)
-		{
-
-		}
-
+		
 
 	};
 	/*
@@ -74,14 +76,11 @@ void Player::toAttack() {
 vector<Territory>* Player::getTerritoriesNum() {
 	return territoriesNum;
 }
-vector<Card>* Player::getPlayerCards() {
+Hand* Player::getPlayerCards() {
 	return playerCards;
 }
 OrdersList* Player::getPlayerOrders() {
 	return playerOrders;
-}
-void Player::assignTerritories(){
-	
 }
 
 Order Player::issueOrder() {
@@ -89,9 +88,16 @@ Order Player::issueOrder() {
 }
 
 Player::~Player() {
-
+	delete territoriesNum;
+	delete playerCards;
+	delete playerOrders;
+	territoriesNum = NULL;
+	playerCards = NULL;
+	playerOrders = NULL;
 }
 
 ostream& operator<<(ostream& output, const Player& p) {
-
+	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
+	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
+	return output;*/
 }

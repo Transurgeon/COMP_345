@@ -73,11 +73,13 @@ Hand::Hand() {
 }
 
 Hand::Hand(Card* c) {
+	hand.push_back(c);
 }
 
 Hand::Hand(const Hand& copy) {
 	hand = copy.hand;
 }
+
 Hand& Hand::operator =(const Hand& copy) {
 	hand = copy.hand;
 	return *this;
