@@ -19,7 +19,7 @@ void Card::play() {
 
 string* Card::getCardType()
 {
-	return *type;
+	return type;
 }
 
 Card::~Card() {
@@ -27,7 +27,7 @@ Card::~Card() {
 	type = NULL;
 }
 
-ostream& operator<<(ostream& output, const Card& c) {
+ostream& operator<<(ostream& output, Card& c) {
 	
 	output << " This cards type is " << c.getCardType() << endl;
     return output;
@@ -53,7 +53,7 @@ void Deck::draw() {
 
 vector<Card>* Deck::getDeck()
 {
-	return *deck;
+	return deck;
 }
 
 Deck::~Deck() {
@@ -61,7 +61,7 @@ Deck::~Deck() {
 	deck = NULL;
 }
 
-ostream& operator<<(ostream& output, const Deck& d) {
+ostream& operator<<(ostream& output, Deck& d) {
 	
 	output << " This deck consists of " << d.getDeck() << endl;
 	return output;
@@ -87,10 +87,10 @@ vector<Card>* Hand::getHand()
 
 Hand::~Hand() {
 	delete hand;
-	hand = null;
+	hand = NULL;
 }
 
-ostream& operator<<(ostream& output, const Hand& h) {
+ostream& operator<<(ostream& output, Hand& h) {
 	
 	output << " This hand consists of " << h.getHand() <<  endl;
 	return output;
