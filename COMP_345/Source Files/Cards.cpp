@@ -82,12 +82,12 @@ Hand& Hand::operator =(const Hand& copy) {
 
 vector<Card>* Hand::getHand()
 {
-	return *hand;
+	return hand;
 }
 
 Hand::~Hand() {
-	delete Hand;
-	Hand = NULL;
+	delete hand;
+	hand = null;
 }
 
 ostream& operator<<(ostream& output, const Hand& h) {
