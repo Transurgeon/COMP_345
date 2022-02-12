@@ -34,12 +34,58 @@ Map& Map::operator =(const Map& copy) //added Map::operator and put the Map refe
 
 bool Map::validate()
 {
+	//should try catch be used?
+
+	/*Pseudo-Code for validate();
+	//NEED TO IMPLEMENT bool DepthSearch(vector<Territory>* territories) RIGHT?
+	check 1: map is a connected graph
+	https://www.geeksforgeeks.org/check-if-a-directed-graph-is-connected-or-not/ 
+
+	if (DepthSearch(Map.getTerritories) == false)
+		return false;
+	check 2: each continent is a connected subgraph
+	for (each continent) {
+		vector<Territories>* Territories_In_continent;
+		for (each Territory) {
+			if (Territory.getContinent == Continent)
+				Territories_In_continent.push_back(Territory);
+		}
+		if (DepthSearch(Territories_In_continent) == false)
+		return false;
+	}
+
+	check 3: each country belongs to one and only one continent
+	for (each territory) {
+		int continentMatch = 0;
+
+		for (each continent) {
+			if (territory.getContinentNum == Continent)
+				continentMatch++;
+		}
+		if (continentMatch != 1) {
+			return false;
+		}
+	}
+
+	*/
 	return true;
+}
+
+vector<Territory>* Map::getTerritories() {
+	return territories;
+}
+
+vector<Continent>* Map::getContinents() {
+	return continents;
+}
+
+vector<Borders>* Map::getBorders() {
+	return borders;
 }
 
 ostream& operator<<(ostream& output, Map& m)
 {
-	output << "Number of territories: "<< m.territories << ", number of continents: " << m.continents << ", number of borders: " << m.borders << endl;
+	output << "Number of territories: " << m.getTerritories() << ", number of continents: " << m.getContinents() << ", number of borders: " << m.getBorders() << endl;
 	return output;
 }
 

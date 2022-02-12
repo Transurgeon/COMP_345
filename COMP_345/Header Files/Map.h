@@ -9,24 +9,6 @@
 
 using namespace std;
 
-class Map {
-private:
-    vector<Territory> *territories;
-    vector<Continent> *continents;
-    vector<Borders> *borders;
-
-public:
-
-    Map();
-    Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b);
-    Map(const Map &copy);
-    Map& operator =(const Map &copy);
-    bool validate();
-
-    ~Map();
-    friend ostream &operator<<(ostream &output, const Map &m);
-};
-
 class Territory{
 private:
     int *continentNum;
@@ -83,6 +65,26 @@ public:
     vector<int> getEdges();
     ~Borders();
     friend ostream &operator<<(ostream& output, const Borders &b);
+};
+
+class Map {
+private:
+    vector<Territory>* territories;
+    vector<Continent>* continents;
+    vector<Borders>* borders;
+
+public:
+
+    Map();
+    Map(vector<Territory>* t, vector<Continent>* c, vector<Borders>* b);
+    Map(const Map& copy);
+    Map& operator =(const Map& copy);
+    bool validate();
+    vector<Territory>* getTerritories();
+    vector<Continent>* getContinents();
+    vector<Borders>* getBorders();
+    ~Map();
+    friend ostream& operator<<(ostream& output, const Map& m);
 };
 
 class MapLoader {
