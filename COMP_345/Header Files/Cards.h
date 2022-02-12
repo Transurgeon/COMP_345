@@ -47,6 +47,7 @@ private:
 
 public:
 	Hand();
+	Hand(Card* c);
 	Hand(const Hand& copy);
 	Hand& operator =(const Hand& copy);
 	vector<Card>* getHand();

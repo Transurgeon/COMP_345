@@ -72,6 +72,9 @@ Hand::Hand() {
 
 }
 
+Hand::Hand(Card* c) {
+}
+
 Hand::Hand(const Hand& copy) {
 	hand = copy.hand;
 }
