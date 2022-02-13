@@ -1,5 +1,10 @@
+#include "../Header Files/Drivers.h"
 #include "../Header Files/Map.h"
-#include <iostream>
+
+void mapMain() {
+	cout << 7;
+}
+
 
 //void showMenu() {
 //    std::cout << "Yo does this work";

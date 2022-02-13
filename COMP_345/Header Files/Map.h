@@ -13,7 +13,7 @@ class Territory{
 private:
     int *continentNum;
     int *countryNum;
-    string *title;
+    string* title;
     int* playerNum;
 
 public:
@@ -88,6 +88,7 @@ public:
 };
 
 class MapLoader {
+public:
     //should add string = path file, maybe use user input instead
     MapLoader();
     Map CreateMap(); //create a map object from reading the .map file

@@ -294,7 +294,7 @@ Borders::~Borders()
 
 /// <summary>
 /// MapLoader
-/// </summary>
+/// </summary>s
 MapLoader::MapLoader()
 {
 
