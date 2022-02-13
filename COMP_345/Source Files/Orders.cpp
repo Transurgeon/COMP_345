@@ -34,7 +34,7 @@ Order::~Order() {
 	type = NULL;
 }
 
-ostream& operator<<(ostream& output, const Order& o) {
+ostream& operator<<(ostream& output, Order& o) {
 	output << " The order consists of" << o.getType() << endl;
 	return output;
 }
@@ -73,7 +73,7 @@ OrdersList::~OrdersList() {
 	OrderList = NULL;
 }
 
-ostream& operator<<(ostream& output, const OrdersList& ol) {
-	output << " The list of orders is " << o.getOrderList() <<  endl;
+ostream& operator<<(ostream& output, OrdersList& ol) {
+	output << " The list of orders is " << ol.getOrderList() <<  endl;
 	return output;
 }

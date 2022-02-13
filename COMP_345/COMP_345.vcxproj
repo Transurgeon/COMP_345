@@ -144,6 +144,7 @@
     <ClCompile Include="Source Files\CardsDriver.cpp" />
     <ClCompile Include="Source Files\GameEngine.cpp" />
     <ClCompile Include="Source Files\GameEngineDriver.cpp" />
+    <ClCompile Include="Source Files\Main.cpp" />
     <ClCompile Include="Source Files\Map.cpp" />
     <ClCompile Include="Source Files\MapDriver.cpp" />
     <ClCompile Include="Source Files\Orders.cpp" />
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\Cards.h" />
+    <ClInclude Include="Header Files\Drivers.h" />
     <ClInclude Include="Header Files\GameEngine.h" />
     <ClInclude Include="Header Files\Map.h" />
     <ClInclude Include="Header Files\Orders.h" />
