@@ -1,5 +1,4 @@
 #include "../Header Files/Map.h"
-#include <iostream>;
 using namespace std;
 
 /// <summary>
@@ -302,7 +301,7 @@ MapLoader::MapLoader()
 
 Map MapLoader::CreateMap()
 {
-
+	return Map();
 }
 
 void MapLoader::readMapFile()
@@ -317,7 +316,7 @@ MapLoader::MapLoader(const MapLoader& copy)
 
 MapLoader& MapLoader::operator =(const MapLoader& copy)
 {
-
+	return *this;
 }
 
 MapLoader::~MapLoader()
@@ -330,4 +329,6 @@ ostream& operator<<(ostream& output, MapLoader& ml)
 	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
 	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
 	return output;*/
+	output << "hi";
+	return output;
 }

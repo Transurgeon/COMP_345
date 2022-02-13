@@ -2,7 +2,7 @@
 #ifndef COMP_345_GameEngine_h
 #define COMP_345_GameEngine_h
 
-#include <iostream>;
+#include <iostream>
 using namespace std;
 
 void runGame();
