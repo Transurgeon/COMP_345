@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header Files\Cards.h" />
+    <ClInclude Include="Header Files\Drivers.h" />
     <ClInclude Include="Header Files\GameEngine.h" />
     <ClInclude Include="Header Files\Map.h" />
     <ClInclude Include="Header Files\Orders.h" />

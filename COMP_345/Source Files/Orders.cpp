@@ -34,11 +34,8 @@ Order::~Order() {
 	type = NULL;
 }
 
-ostream& operator<<(ostream& output, const Order& o) {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
-	output << "hi";
+ostream& operator<<(ostream& output, Order& o) {
+	output << " The order consists of" << o.getType() << endl;
 	return output;
 }
 
@@ -76,10 +73,7 @@ OrdersList::~OrdersList() {
 	OrderList = NULL;
 }
 
-ostream& operator<<(ostream& output, const OrdersList& ol) {
-	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
-	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
-	return output;*/
-	output << "hi";
+ostream& operator<<(ostream& output, OrdersList& ol) {
+	output << " The list of orders is " << ol.getOrderList() <<  endl;
 	return output;
 }
