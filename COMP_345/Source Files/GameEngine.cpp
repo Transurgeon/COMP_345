@@ -1,31 +1,29 @@
 #include "../Header Files/GameEngine.h"
+using namespace GameEngine;
 
 void runGame() {
 
 	}
-namespace GameEngine {
 
-	void loadMap() {
+void loadMap() {
 
-	}
+}
+void addPlayers() {
 
-	void addPlayers() {
+}
 
-	}
+void assignReinforcements() {
 
-	void assignReinforcements() {
+}
 
-	}
+void issueOrders() {
 
-	void issueOrders() {
+}
 
-	}
+bool executeOrders() {
+	return true;
+}
 
-	bool executeOrders() {
-
-	}
-
-	bool gameOver() {
-
-	}
+bool gameOver() {
+	return true;
 }

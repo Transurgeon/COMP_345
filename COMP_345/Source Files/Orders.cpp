@@ -26,7 +26,7 @@ void Order::execute() {
 }
 
 bool Order::validate() {
-
+	return true;
 }
 
 Order::~Order() {
@@ -38,6 +38,8 @@ ostream& operator<<(ostream& output, const Order& o) {
 	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
 	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
 	return output;*/
+	output << "hi";
+	return output;
 }
 
 OrdersList::OrdersList() {
@@ -45,7 +47,7 @@ OrdersList::OrdersList() {
 }
 
 OrdersList::OrdersList(Order* o) {
-	OrderList->push_back(o);
+	
 }
 
 OrdersList::OrdersList(const OrdersList& copy) {
@@ -78,4 +80,6 @@ ostream& operator<<(ostream& output, const OrdersList& ol) {
 	/*output << " This territory is called" << t.getName() << " the country number is:" << t.getCountryNum() << endl;
 	output << " This territory is part of the continent number: " << t.getContinent() << " it is owned by" << t.getName() << endl;
 	return output;*/
+	output << "hi";
+	return output;
 }

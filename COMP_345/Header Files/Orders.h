@@ -2,9 +2,9 @@
 #ifndef COMP_345_Orders_h
 #define COMP_345_Orders_h
 
-#include <iostream>;
-#include <string>;
-#include <vector>;
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Order {

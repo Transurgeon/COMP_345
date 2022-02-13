@@ -2,9 +2,9 @@
 #ifndef COMP_345_Cards_h
 #define COMP_345_Cards_h
 
-#include <iostream>;
-#include <string>;
-#include <vector>;
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Card {

@@ -2,9 +2,9 @@
 #ifndef COMP_345_Player_h
 #define COMP_345_Player_h
 
-#include <iostream>;
-#include <string>;
-#include <vector>;
+#include <iostream>
+#include <string>
+#include <vector>
 #include "../Header Files/Map.h"
 #include "../Header Files/Cards.h"
 #include "../Header Files/Orders.h"

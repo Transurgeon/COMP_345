@@ -2,10 +2,10 @@
 #ifndef COMP_345_Map_h
 #define COMP_345_Map_h
 
-#include <iostream>;
-#include <string>;
-#include <fstream>;
-#include <vector>;
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <vector>
 
 using namespace std;
 
